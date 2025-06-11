@@ -1,8 +1,5 @@
-//using DicaVerde.Areas.Admin.Servicos;
 using DicaVerde.Context;
 using DicaVerde.Models;
-//using DicaVerde.Repositories;
-//using DicaVerde.Repositories.Interfaces;
 using DicaVerde.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,12 +15,8 @@ builder.Services.AddIdentity<User, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-//builder.Services.AddTransient<ILancheRepository, LancheRepository>();
-//builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
-//builder.Services.AddTransient<IPedidoRepository, PedidoRepository>();
+
 builder.Services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
-//builder.Services.AddScoped<RelatorioVendasService>();
-//builder.Services.AddScoped<GraficoVendasService>();
 
 builder.Services.AddAuthorization(options =>
 {
@@ -65,12 +58,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 CriarPerfisUsuarios(app);
-
-////cria os perfis
-//seedUserRoleInitial.SeedRoles();
-////cria os usuários e atribui ao perfil
-//seedUserRoleInitial.SeedUsers();
-
 app.UseSession();
 
 app.UseAuthentication();
