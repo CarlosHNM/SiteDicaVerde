@@ -1,0 +1,10 @@
+﻿@model DicaVerde.Models.Noticia
+
+<h2>@Model.Titulo</h2>
+<p><small>Publicado em @Model.DataPublicacao.ToString("dd/MM/yyyy")</small></p>
+
+<hr />
+
+<p>@Model.Conteudo</p>
+<a href="@ViewBag.ReturnUrl" class="btn btn-secondary mt-3">Voltar</a>
+

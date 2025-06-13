@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DicaVerde.Models.Noticia>
+
+<h2>Últimas Notícias Verdes</h2>
+
+@foreach (var noticia in Model)
+{
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="card-title">@noticia.Titulo</h4>
+            <p class="card-text">
+                @noticia.Conteudo.Substring(0, Math.Min(noticia.Conteudo.Length, 200))...
+            </p>
+            <a href="@Url.Action("Detalhes", "Noticias", new { id = noticia.Id })" class="btn btn-success">Ler mais</a>
+        </div>
+        <div class="card-footer text-muted">
+            Publicado em @noticia.DataPublicacao.ToString("dd/MM/yyyy")
+        </div>
+    </div>
+}
