@@ -1,4 +1,3 @@
-﻿// Controllers/NoticiasController.cs
 using Microsoft.AspNetCore.Mvc;
 using DicaVerde.Models;
 using System.Linq;
